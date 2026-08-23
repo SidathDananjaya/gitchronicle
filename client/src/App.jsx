@@ -40,7 +40,7 @@ function App() {
     setError('');
     setHasSearched(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/analyze', { username: username.trim() });
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/analyze`, { username: username.trim() });
       setData(response.data);
       // Scroll to results after a brief delay
       setTimeout(() => {
