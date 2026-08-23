@@ -1,0 +1,161 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #0a0a1a;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: white;
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Animated Stars Background */
+.stars-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+                    radial-gradient(1px 1px at 90px 40px, #fff, transparent);
+  background-size: 200px 200px;
+  animation: twinkle 4s ease-in-out infinite alternate;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.8; }
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+header h1 {
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(0, 242, 254, 0.2);
+}
+header p {
+  color: #8892b0;
+  letter-spacing: 2px;
+  font-size: 1.1rem;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+.search-form input {
+  padding: 0.9rem 1.8rem;
+  width: 350px;
+  border-radius: 60px;
+  border: 1px solid #233554;
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-size: 1rem;
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+}
+.search-form input:focus {
+  outline: none;
+  border-color: #00f2fe;
+  box-shadow: 0 0 25px rgba(0, 242, 254, 0.2);
+}
+.search-form button {
+  padding: 0.9rem 2.5rem;
+  border-radius: 60px;
+  border: none;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  color: #0a0a1a;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+}
+.search-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(0, 242, 254, 0.6);
+}
+.search-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #ff6b6b;
+  text-align: center;
+  background: rgba(255, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ff6b6b;
+}
+
+/* Glassmorphism Cards */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 1.8rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.stat-card {
+  text-align: center;
+}
+.stat-card span {
+  color: #8892b0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.stat-card h2 {
+  font-size: 2.8rem;
+  background: linear-gradient(135deg, #fff, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0.3rem;
+}
+
+.narrative-box {
+  margin-bottom: 2rem;
+}
+.narrative-box h3 {
+  color: #00f2fe;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+.narrative-box p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #ccd6f6;
+}
+
+.chart-box h3 {
+  color: #00f2fe;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
